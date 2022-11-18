@@ -1,0 +1,20 @@
+<div class="container" >
+  <%= render 'layouts/banner' %>
+
+  <div class=" cards mt-5">
+    <% @lists.each do |list| %>
+      <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Bonfire_Flames.JPG/1200px-Bonfire_Flames.JPG)">
+        <%= link_to list_path(list) do %>
+          <h3><%= list.name%></h3>
+        <% end %>
+        <%= link_to list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?" }, class:"absolute" do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="btn">
+    <%= link_to "Create a new list", new_list_path%>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <h1> Create a new list </h1>
+
+  <div class="row">
+    <%= simple_form_for @list do |l| %>
+      <%= l.input :name %>
+      <div class="form-actions">
+       <%= l.button :submit, class:"btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <h2>All my lists</h2>
+    <%= link_to "Lists", lists_path%>
+  </div>
+</div>
